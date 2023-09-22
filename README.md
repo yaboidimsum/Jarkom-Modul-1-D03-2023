@@ -62,7 +62,7 @@ Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal be
 <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/69fb0994-f850-4a5a-8b3d-f3ff679b9f77">
 
 ## Soal Nomor 4
-Berapa nilai checksum yang didapat dari header pada paket nomor 130?**0x18e5**
+Berapa nilai checksum yang didapat dari header pada paket nomor 130? **0x18e5**
 
 **Langkah-Langkah Penyelesaian**
 - Scroll ke ``packet 130`` lalu lihat detail dari paket tersebut
@@ -76,9 +76,30 @@ Berapa nilai checksum yang didapat dari header pada paket nomor 130?**0x18e5**
 
 ## Soal Nomor 5
 Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.
-- Berapa banyak packet yang berhasil di capture dari file pcap tersebut?
-- Port berapakah pada server yang digunakan untuk service SMTP?
-- Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?
+- Berapa banyak packet yang berhasil di capture dari file pcap tersebut? **60**
+- Port berapakah pada server yang digunakan untuk service SMTP? **25**
+- Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP? **74.53.140.153**
+
+**Langkah-Langkah**
+- File Zip mengandung sebuah txt file yaitu ``connect.txt`` dan memerlukan sebuah password, yang berarti password berada di suatu tempat di dalam file ``soal5.pcap``.
+- Cara yang dilakukan adalah melakukan ``analyze`` dan follow ``TCP Stream``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/a4d8be2b-2a4c-44a9-a25c-84543d4ee12d">
+- Setelah diselidiki, ternyata password telah ditemukan yaitu ``NWltcGxlUGFzNXdvcmQ=`` namun harus didecode dari format Base64
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/76c133dd-28a1-4d95-9916-e03a5b724071">
+- Berikut adalah hasil dari decode Base64 format yaitu ``5implePas5word``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/b5143819-9805-4906-9a01-601288d7a647">
+- Password dapat digunakan untuk membuka ``connect.txt``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/1f2edaa5-0c25-4a8d-8f1d-9bd146cbb341">
+- Untuk menjawab pertanyaan berapa packet yang dicapture, kita dapat menghitung jumlah semua packet di ``soal5.cap`` ada berapa. Totalnya ada 60
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/84f84696-c399-4178-88e8-84b038fb8408">
+- Untuk menjawab pertanyaan port berapa yang digunakan untuk service SMTP, salah satu file dapat dipilih lalu dilihat detail ``Transmission Control Protocol`` pada bagian ``source port``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/a862fff6-fcec-43d1-bb32-35b9c8c3fc7a">
+- Untuk menjawab IP mana yang terbilang public, dapat dilihat dari IP itu sendiri yaitu selain ``10.10.1.4`` dan ``192.168.1.1``. Private IP address biasanya mulai dengan 192, 172, atau 10. Jadi jawabannya adalah ``74.53.140.153``
+
+### Bukti Flag
+<img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/2e68a59a-f786-4cbd-ad85-16f5cfca9024">
+
+
 
 ## Soal Nomor 6
 Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
