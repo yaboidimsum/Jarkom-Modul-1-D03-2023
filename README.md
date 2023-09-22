@@ -45,8 +45,24 @@ Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer! **gu
 
 ## Soal Nomor 3
 Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
-- Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?
-- Protokol layer transport apa yang digunakan?
+- Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702? **21**
+- Protokol layer transport apa yang digunakan? **UDP**
+
+**Langkah-Langkah Penyelesaian**
+- Filter IP ``239.255.255.250`` dan port ``3702`` dengan ``ip.addr == 239.255.255.250 && udp.port == 3702``. (Alternatif lain disini, packet bisa dihitung manual)
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/79edb6f1-f14b-43a0-896a-9b9904d8ccbb">
+- Setelah difilter, pilih menu ``Statistics`` dan pilih ``Endpoints``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/0df1564b-a3ae-4341-ab3f-36bc66408846">
+- Pilih UDP dan total packet dari IP ``239.255.255.250``dan port ``3702`` akan terlihat. Total packet berjumlah 21
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/8c332c2b-2f4f-4651-a4bd-1895643bcc2d">
+- Untuk protokol UDP bisa dilihat diendpoints atau melalui Internet Protocol Version 4 dari salah satu packet
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/e8cc4ea2-1430-48ca-8b8b-3a66b7dab3e2">
+
+### Bukti Flag
+<img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/69fb0994-f850-4a5a-8b3d-f3ff679b9f77">
+
+
+
 
 ## Soal Nomor 4
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
