@@ -169,3 +169,6 @@ Berikut adalah langkah-langkah yang dilakukan untuk menyelesaikan soal tersebut:
 ![wireshark-soal10-8](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.44.47.png?raw=true)
 ![wireshark-soal10-9](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.44.52.png?raw=true)
 ![terminal-soal10](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.46.08.png?raw=true)
+
+## Kendala
+Kendala ditemukan saat akses dan pengunduhan dari portal partikum Jarkom. Kami membutuhkan waktu lama untuk mengakses situs praktikum dan melakukan penguduhan file soal pcapng bisa sampai 20 menit.
