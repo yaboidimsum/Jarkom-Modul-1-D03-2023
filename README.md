@@ -1,7 +1,6 @@
-# Jarkom-Modul-1-D03-2023
 # Praktikum Modul 1 Jaringan Komputer
 
-Perkenalkan kami dari kelas ``Jaringan Komputer D Kelompok  D03``, dengan anggota sebagai berikut:
+Perkenalkan kami dari kelas ``Jaringan Komputer D Kelompok D03``, dengan anggota sebagai berikut:
 
 | Nama                      | NRP        |
 |---------------------------|------------|
