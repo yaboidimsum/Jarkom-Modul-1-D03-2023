@@ -11,10 +11,24 @@ Perkenalkan kami dari kelas ``Jaringan Komputer D Kelompok  D03``, dengan anggot
 # Laporan Resmi Praktikum Modul 1 Jarkom
 ## Soal Nomor 1
 User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya adalah mengunggah suatu file.
-- Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut? 
-- Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut? 
-- Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
-- Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
+- Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut? **258040667**
+- Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut? **1044861039**
+- Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut? **1044861039**
+- Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut? **258040696**
+
+**Langkah-Langkah Penyelesaian**
+- Filter protokol hanyak untuk ``FTP``
+- Mencari packets yang melakukan aktivitas unggah (STOR dan Opening Binary) file ``c75-GrabThePhisher.zip``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/28a00cd3-b807-4fd7-a3d8-0eb079039d1c">
+- Lihat nilai ``sequence number (raw)`` dan ``acknowledge number (raw)`` melalui ``Transmission Control Protocol`` pada ``packet 147``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/ed9d1e24-af92-4241-a1e4-53e855a7754c">
+- Lanjut ke ``packet 149`` untuk mengecek response dari aktivitas tersebut, cek nilai ``sequence number (raw)`` dan ``acknowledge number (raw)``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/5cf6e490-22e4-4ea8-a1cc-3cd8239294fb">
+
+**Bukti Flag**
+<img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/2e7e6792-9b21-43cb-af82-78f357be55fa">
+
+
 
 ## Soal Nomor 2
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
