@@ -25,13 +25,23 @@ User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya
 - Lanjut ke ``packet 149`` untuk mengecek response dari aktivitas tersebut, cek nilai ``sequence number (raw)`` dan ``acknowledge number (raw)``
   <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/5cf6e490-22e4-4ea8-a1cc-3cd8239294fb">
 
-**Bukti Flag**
+### Bukti Flag
 <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/2e7e6792-9b21-43cb-af82-78f357be55fa">
 
-
-
 ## Soal Nomor 2
-Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
+Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer! **gunicorn**
+
+**Langkah-Langkah Penyelesaian**
+- Filter protokol untuk ``http``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/27178ec5-fec3-4f9b-96d9-ab8be2008583">
+- Pilih salah satu packet dan pada menu analyze pilih ``Follow`` dan lakukan ``HTTP Stream``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/89ebb57f-6498-4c31-8ab3-476aeb5ad90d">
+- Server yang digunakan akan terlihat saat melakukan ``HTTP Stream``. Pada kasus ini, web server yang digunakan adalah ``gunicorn``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/f8d08e3f-fad7-4aa2-9714-4ad29e9904fa">
+
+### Bukti Flag
+<img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/182255a2-c37c-4f56-a47e-f4e605462647">
+
 
 ## Soal Nomor 3
 Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
