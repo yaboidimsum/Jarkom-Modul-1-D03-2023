@@ -61,11 +61,19 @@ Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal be
 ### Bukti Flag
 <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/69fb0994-f850-4a5a-8b3d-f3ff679b9f77">
 
-
-
-
 ## Soal Nomor 4
-Berapa nilai checksum yang didapat dari header pada paket nomor 130?
+Berapa nilai checksum yang didapat dari header pada paket nomor 130?**0x18e5**
+
+**Langkah-Langkah Penyelesaian**
+- Scroll ke ``packet 130`` lalu lihat detail dari paket tersebut
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/6e59c5b2-2db4-44b1-b1ea-e5e6fa88d5ce">
+- Lihat ``User Datagram Protocol``, checksum akan terlihat dengan nilai ``**0x18e5**``
+  <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/85f00e2a-2458-4ace-9c62-784645385e69">
+
+### Bukti Flag
+<img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/c1a60b7f-43a7-40da-81f0-b6b96ad42772">
+
+
 ## Soal Nomor 5
 Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.
 - Berapa banyak packet yang berhasil di capture dari file pcap tersebut?
