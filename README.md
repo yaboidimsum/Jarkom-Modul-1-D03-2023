@@ -102,17 +102,71 @@ Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk men
 
 
 ## Soal Nomor 6
-Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
+Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan __"server SOURCE ADDRESS 7812 is invalid"__. ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
+### Pembahasan 
+Diberikan beberapa hint yang dapat membantu untuk menyelesaikan soal tersebut. Berikut adalah hint yang diberikan:
+ - Clue 1 : Sepertinya ada yang salah dengan penulisan tersebut secara KBBI. Ada sesuatu yang Besar di depan mata.
+ - Clue 2 : Jenis cipher merupakan substitusi a1z26 Cipher
+ - Clue 3 : Rentang Huruf yang digunakan Huruf A-R, 1-18 dengan Jawaban 6 Huruf.
+ - Clue 4 : SOURCE ADDRESS ADALAH KUNCI SEMUANYA.
+
+Berdasarkan hint tersebut, maka dapat disimpulkan bahwa soal tersebut merupakan soal yang menggunakan metode `a1z26 Cipher`. Untuk menyelesaikan soal tersebut, maka dapat menggunakan `wireshark` untuk mencari source address yang dimaksud. Berikut adalah langkah-langkah yang dilakukan untuk menyelesaikan soal tersebut:
+1. Pertama, buka wireshark dan langsung menuju ke packet nomor `7812``.
+2. Kemudian, simpan source address packet tersebut yang dapat dilihat pada bagian `Internet Protocol Version 4`.
+3. Setelah itu, buka [website](https://cryptii.com/pipes/caesar-cipher) untuk melakukan decrypt.
+4. Namun, terdapat ketentuan bahwa rentan huruf yang digunakan adalah `A-R` dan `1-18`. Sehingga source address yang telah disimpan perlu di lakukan modifikasi. Source address semula nya adalah `104.18.14.101`, sehingga perlu diubah menjadi `10, 4, 18, 14, 10, 1`. 
+5. Setelah itu, masukkan hasil modifikasi tersebut ke dalam website dan decrypt menggunakan metode `a1z26 Cipher`.
+6. Maka akan didapatkan hasil berupa `JDRNJA`. 
+
+### Screenshot
+![wireshark-soal6](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-6/Screenshot%202023-09-22%20at%2015.37.54.png?raw=true)
+![chiper-decode](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-6/Screenshot%202023-09-22%20at%2015.53.00.png?raw=true)
+![terminal-soa6](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-6/Screenshot%202023-09-22%20at%2015.54.08.png?raw=true)
+### Kendala
+Adapun kedala yang dialami selama pengerjaan soal ini adalah deskripsi soal yang masih kurang jelas, sehingga teka teki tersebut sulit diselesaikan
 
 ## Soal Nomor 7
 Berapa jumlah packet yang menuju IP 184.87.193.88?
+### Pembahasan 
+Soal tersebut merupakan jenis soal query filter yang dapat di selesaikan hanya dengan menambahkan filter expression berupa `ip.src == 184.87.193.88` pada wireshark. Filter Expression tersebut berarti kita mengambil seluruh packet yang menuju ip source `184.87.193.88`. Pada kasus ini, packet hanya berjumlah `6`.
+### Screenshot
+![wireshark-soal7](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-7/Screenshot%202023-09-22%20at%2016.07.27.png?raw=true)
+![terminal-soal7](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-7/Screenshot%202023-09-22%20at%2016.11.08.png?raw=true)
 
 ## Soal Nomor 8
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
+### Pembahasan 
+Untuk mejawab soal tersebut, kita hanya cukup memahami logika kueri sederhana. Kueri tersebut adalah `tcp.dstport == 80 || udp.dstport == 80`. Kueri tersebut berarti kita mengambil seluruh packet yang menuju port 80 baik itu menggunakan protokol tcp maupun udp. Pengurutan berdasarkan abjad sudah dilakukan secara otomatis oleh wireshark.
 
+### Screenshot
+![terminal-soal8](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-8/Screenshot%202023-09-22%20at%2016.21.17.png?raw=true)
 ## Soal Nomor 9
 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
+### Pembahasan 
+Seperti pada soal sebelumnya, soal tersebut merupakan jenis soal query filter yang dapat di selesaikan hanya dengan menambahkan filter expression berupa `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34` pada wireshark. Filter Expression tersebut berarti kita mengambil seluruh packet yang berasal dari ip source `10.51.40.1` namun tidak menuju ke ip destination `10.39.55.34`.
+### Screenshot
+![terminal-soal9](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-9/Screenshot%202023-09-22%20at%2016.23.01.png?raw=true)
 
 ## Soal Nomor 10
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
+### Pembahasan 
+Untuk menjawab soal tersebut, kita hanya perlu mencari packet yang menggunakan protokol telnet. Setelah itu, kita dapat melihat isi dari packet tersebut. Pada kasus ini, kita dapat melihat bahwa terdapat kredensial yang digunakan untuk login. 
+Berikut adalah langkah-langkah yang dilakukan untuk menyelesaikan soal tersebut:
+1. Pertama, buka wireshark dan lakukan filter expression `telnet contains "Login"`.
+2. Kemudian, tandai packet yang berisikan data Login tersebut.
+3. Setelah itu, kembali lakukan filter expression `telnet`. 
+4. Kemudian menuju packet yang telah ditandai sebelumnya.
+5. Lakukan pembacaan isi dari packet packet yang berada di bawahnya. Maka di temukan pola kredensial yang digunakan untuk login. Pola tersebut adalah `d`, `h`, `a`, `f`, `i`, `n` untuk username dan `kesayangannyak0k0` untuk password.
+6. Sehingga jika di gabung sebagai format jawaban nya `[username]:[password]` adalah `dhafin:kesayangannyak0k0`.
 
+### Screenshot
+![wireshark-soal10-1](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.40.52.png?raw=true)
+![wireshark-soal10-2](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.42.59.png?raw=true)
+![wireshark-soal10-3](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.43.40.png?raw=true)
+![wireshark-soal10-4](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.43.55.png?raw=true)
+![wireshark-soal10-5](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.44.06.png?raw=true)
+![wireshark-soal10-6](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.44.18.png?raw=true)
+![wireshark-soal10-7](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.44.25.png?raw=true)
+![wireshark-soal10-8](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.44.47.png?raw=true)
+![wireshark-soal10-9](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.44.52.png?raw=true)
+![terminal-soal10](https://github.com/AlfanLukeyan/trash/blob/main/Jarkom-Modul-1-D03-2023/soal-10/Screenshot%202023-09-22%20at%2016.46.08.png?raw=true)
