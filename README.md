@@ -67,7 +67,7 @@ Berapa nilai checksum yang didapat dari header pada paket nomor 130? **0x18e5**
 **Langkah-Langkah Penyelesaian**
 - Scroll ke ``packet 130`` lalu lihat detail dari paket tersebut
   <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/6e59c5b2-2db4-44b1-b1ea-e5e6fa88d5ce">
-- Lihat ``User Datagram Protocol``, checksum akan terlihat dengan nilai ``**0x18e5**``
+- Lihat ``User Datagram Protocol``, checksum akan terlihat dengan nilai ``0x18e5``
   <img width="1280" alt="image" src="https://github.com/yaboidimsum/Jarkom-Modul-1-D03-2023/assets/101172637/85f00e2a-2458-4ace-9c62-784645385e69">
 
 ### Bukti Flag
